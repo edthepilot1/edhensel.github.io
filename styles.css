@@ -19,7 +19,8 @@
   --color-white:       #FFFFFF;
   --shadow-sm:  0 1px 3px rgba(59,35,20,.12);
   --shadow-md:  0 4px 12px rgba(59,35,20,.15);
-  --shadow-lg:  0 8px 24px rgba(59,35,20,.18);
+  --shadow-lg:  0 8px 28px rgba(59,35,20,.22);
+  --shadow-book: 0 12px 40px rgba(59,35,20,.3), 0 4px 12px rgba(0,0,0,.15);
   --radius:     6px;
   --max-width:  1100px;
   --transition: .25s ease;
@@ -100,32 +101,61 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================
-   Hero Section
+   Hero Section — Split layout with book cover
    ============================================ */
 .hero {
-  background: linear-gradient(160deg, var(--color-brown) 0%, var(--color-brown-mid) 100%);
+  background: linear-gradient(160deg, var(--color-brown) 0%, var(--color-brown-mid) 60%, #4A2E1C 100%);
   color: var(--color-cream);
-  text-align: center;
-  padding: 5rem 1rem 4.5rem;
-}
-.hero h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  color: var(--color-cream);
-  margin-bottom: .4rem;
-}
-.hero .subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.35rem);
-  color: var(--color-amber-light);
-  font-style: italic;
-  margin-bottom: 2rem;
-}
-.hero .intro-text {
-  max-width: 700px; margin: 0 auto 2.2rem;
-  font-size: 1.05rem; line-height: 1.8;
-  color: var(--color-cream-dark);
+  padding: 4rem 1rem 4.5rem;
 }
 
-/* CTA Button */
+.hero-split {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-cover {
+  flex: 0 0 auto;
+}
+.hero-cover img {
+  width: 300px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: var(--shadow-book);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+.hero-cover img:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 18px 50px rgba(59,35,20,.35), 0 6px 16px rgba(0,0,0,.2);
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-cream);
+  margin-bottom: .3rem;
+}
+.hero .subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--color-amber-light);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.hero .intro-text {
+  max-width: 600px;
+  font-size: 1.05rem; line-height: 1.8;
+  color: var(--color-cream-dark);
+  margin-bottom: 2rem;
+}
+.hero-buttons {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+}
+
+/* CTA Buttons */
 .btn {
   display: inline-block;
   background: var(--color-amber);
@@ -135,14 +165,15 @@ h1, h2, h3, h4 {
   padding: .85rem 2.2rem;
   border-radius: var(--radius);
   border: 2px solid var(--color-amber);
-  transition: background var(--transition), color var(--transition), transform var(--transition);
+  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
   cursor: pointer;
 }
 .btn:hover {
   background: var(--color-amber-dark);
   border-color: var(--color-amber-dark);
   color: var(--color-white);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196,125,26,.35);
 }
 .btn-outline {
   background: transparent;
@@ -193,7 +224,7 @@ h1, h2, h3, h4 {
 .card h3 { font-size: 1.2rem; margin-bottom: .6rem; color: var(--color-amber-dark); }
 .card p  { font-size: .97rem; color: var(--color-brown-light); }
 
-/* --- Author Teaser --- */
+/* --- Author Teaser (home page) --- */
 .author-teaser {
   display: flex; align-items: center; gap: 2.5rem;
   flex-wrap: wrap;
@@ -201,12 +232,13 @@ h1, h2, h3, h4 {
 .author-teaser__img {
   flex: 0 0 200px;
   height: 200px;
-  background: var(--color-cream-dark);
-  border: 3px solid var(--color-amber);
-  border-radius: var(--radius);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .9rem; color: var(--color-brown-light); text-align: center;
-  padding: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--color-amber);
+  box-shadow: var(--shadow-md);
+}
+.author-teaser__img img {
+  width: 100%; height: 100%; object-fit: cover;
 }
 .author-teaser__text { flex: 1; min-width: 260px; }
 .author-teaser__text h2 { margin-bottom: .6rem; }
@@ -215,19 +247,55 @@ h1, h2, h3, h4 {
 /* --- About Page --- */
 .about-content { display: flex; gap: 2.5rem; flex-wrap: wrap; align-items: flex-start; }
 .about-photo {
-  flex: 0 0 260px;
-  min-height: 320px;
-  background: var(--color-cream-dark);
-  border: 3px solid var(--color-amber);
+  flex: 0 0 280px;
+  overflow: hidden;
+  border: 4px solid var(--color-amber);
   border-radius: var(--radius);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .95rem; color: var(--color-brown-light); text-align: center;
-  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+}
+.about-photo img {
+  width: 100%; height: auto; display: block;
 }
 .about-text { flex: 1; min-width: 280px; }
 .about-text p { margin-bottom: 1.1rem; }
 
-/* --- Book Page --- */
+/* --- Book Page — Showcase --- */
+.book-showcase {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-cream-dark);
+  margin-bottom: 2.5rem;
+}
+.book-showcase__cover {
+  flex: 0 0 auto;
+}
+.book-showcase__cover img {
+  width: 280px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: var(--shadow-book);
+}
+.book-showcase__info {
+  flex: 1;
+}
+.book-showcase__info h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: .3rem;
+}
+.book-showcase__info .byline {
+  font-size: 1.1rem;
+  color: var(--color-brown-light);
+  font-style: italic;
+  margin-bottom: .6rem;
+  line-height: 1.5;
+}
+.book-showcase__info .book-meta {
+  font-size: .9rem;
+  color: var(--color-brown-light);
+  margin-bottom: 1.5rem;
+}
 .book-header {
   text-align: center;
   padding-bottom: 2rem;
@@ -311,7 +379,7 @@ h1, h2, h3, h4 {
   margin-top: .5rem;
 }
 
-/* --- Speaking CTA --- */
+/* --- Speaking CTA / Dark banner sections --- */
 .speaking-cta {
   background: linear-gradient(160deg, var(--color-brown) 0%, var(--color-brown-mid) 100%);
   color: var(--color-cream);
@@ -364,14 +432,26 @@ h1, h2, h3, h4 {
   .main-nav.open ul { display: flex; }
   .main-nav a { display: block; padding: .75rem 5%; }
 
-  .hero { padding: 3.5rem 1rem 3rem; }
+  .hero { padding: 3rem 1rem 2.5rem; }
+  .hero-split {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text { text-align: center; }
+  .hero-text .intro-text { margin-left: auto; margin-right: auto; }
+  .hero-cover img { width: 220px; }
+  .hero-buttons { justify-content: center; }
+
   .section { padding: 2.5rem 0; }
 
   .author-teaser { flex-direction: column; text-align: center; }
   .author-teaser__img { flex: none; width: 160px; height: 160px; margin: 0 auto; }
 
   .about-content { flex-direction: column; }
-  .about-photo { flex: none; width: 200px; min-height: 240px; margin: 0 auto; }
+  .about-photo { flex: none; width: 240px; margin: 0 auto; }
+
+  .book-showcase { flex-direction: column; align-items: center; text-align: center; }
+  .book-showcase__cover img { width: 220px; }
 
   .contact-grid { flex-direction: column; }
 }
@@ -379,4 +459,6 @@ h1, h2, h3, h4 {
 @media (max-width: 480px) {
   html { font-size: 15px; }
   .card-grid { grid-template-columns: 1fr; }
+  .hero-cover img { width: 180px; }
+  .book-showcase__cover img { width: 180px; }
 }
