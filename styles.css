@@ -237,6 +237,13 @@ h1, h2, h3, h4 {
 .card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .card h3 { font-size: 1.2rem; margin-bottom: .6rem; color: var(--color-amber-dark); }
 .card p  { font-size: .97rem; color: var(--color-brown-light); }
+.card-icon {
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: .75rem;
+  color: var(--color-amber);
+}
 
 /* --- Author Teaser (home page) --- */
 .author-teaser {
@@ -431,7 +438,14 @@ h1, h2, h3, h4 {
   text-align: center;
   padding: 3rem 1rem 2.5rem;
 }
-.page-banner h1 { color: var(--color-cream); font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.page-banner h1 { color: var(--color-cream); font-size: clamp(1.7rem, 4vw, 2.5rem); margin-bottom: .5rem; }
+.page-banner__sub {
+  color: var(--color-amber-light);
+  font-size: 1rem;
+  letter-spacing: .04em;
+  margin-top: .4rem;
+  font-style: italic;
+}
 
 /* ============================================
    Responsive — Tablet and below

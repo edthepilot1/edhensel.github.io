@@ -4,5 +4,4 @@
 User-agent: *
 Allow: /
 
-# *** Replace https://edhensel.com with your actual domain ***
 Sitemap: https://edhensel.com/sitemap.xml
