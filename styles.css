@@ -279,12 +279,14 @@ h1, h2, h3, h4 {
 /* --- Book Page — Showcase --- */
 .book-showcase {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 3rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid var(--color-cream-dark);
+  background: linear-gradient(160deg, var(--color-brown) 0%, var(--color-brown-mid) 60%, #4A2E1C 100%);
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
   margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-md);
 }
 .book-showcase__cover {
   flex: 0 0 auto;
@@ -301,21 +303,23 @@ h1, h2, h3, h4 {
 }
 .book-showcase__info {
   flex: 1;
+  color: var(--color-cream);
 }
 .book-showcase__info h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   margin-bottom: .3rem;
+  color: var(--color-cream);
 }
 .book-showcase__info .byline {
   font-size: 1.1rem;
-  color: var(--color-brown-light);
+  color: var(--color-amber-light);
   font-style: italic;
   margin-bottom: .6rem;
   line-height: 1.5;
 }
 .book-showcase__info .book-meta {
   font-size: .9rem;
-  color: var(--color-brown-light);
+  color: rgba(253, 246, 236, .75);
   margin-bottom: 1.5rem;
 }
 
@@ -464,6 +468,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 2.25rem 1.5rem;
   }
   .book-showcase__cover { margin: 0 auto; }
   .book-showcase__cover img { width: 240px; margin: 0 auto; }
