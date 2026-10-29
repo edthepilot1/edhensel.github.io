@@ -508,3 +508,107 @@ h1, h2, h3, h4 {
   .hero { padding: 2.5rem 1rem 2rem; }
   .btn { padding: .75rem 1.6rem; font-size: 1rem; }
 }
+
+/* ============================================
+   Free Audiobook (book.html #listen, home band)
+   ============================================ */
+.book-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-buttons .btn { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+.listen { scroll-margin-top: 4.5rem; }
+.listen + .speaking-cta { margin-top: 0; }
+
+.listen-player { max-width: 880px; margin: 0 auto 2.5rem; }
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--color-brown);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.video-frame iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; border: 0;
+}
+
+.chapter-list__heading {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--color-amber-dark);
+  margin-bottom: 1rem;
+}
+.chapter-list {
+  list-style: none;
+  max-width: 880px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: .5rem .75rem;
+}
+.chapter-btn {
+  width: 100%;
+  display: flex; align-items: baseline; gap: .9rem;
+  text-align: left;
+  background: var(--color-white);
+  border: 1px solid transparent;
+  border-left: 3px solid var(--color-amber);
+  border-radius: var(--radius);
+  padding: .65rem 1rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: .97rem; line-height: 1.45;
+  color: var(--color-text);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+}
+.chapter-btn:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.chapter-btn:focus-visible { outline: 3px solid rgba(196,125,26,.45); outline-offset: 2px; }
+.chapter-btn[aria-current="true"] {
+  border-color: var(--color-amber);
+  background: #FFF9F0;
+}
+.chapter-btn__time {
+  flex: 0 0 4.2rem;
+  font-variant-numeric: tabular-nums;
+  font-size: .85rem;
+  color: var(--color-brown-light);
+}
+.chapter-btn__kind {
+  display: block;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--color-amber-dark);
+}
+.listen-note {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  text-align: center;
+  font-size: .95rem;
+  color: var(--color-brown-light);
+}
+
+/* Home page band */
+.listen-band {
+  background: var(--color-cream-dark);
+  border-bottom: 1px solid rgba(59,35,20,.08);
+  padding: 2.25rem 0;
+}
+.listen-band__inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+}
+.listen-band__text h2 { font-size: clamp(1.3rem, 2.6vw, 1.6rem); margin-bottom: .3rem; }
+.listen-band__text p  { color: var(--color-brown-light); max-width: 640px; }
+.listen-band .btn { flex: 0 0 auto; }
+
+@media (max-width: 900px) {
+  .book-actions { justify-content: center; }
+}
+@media (max-width: 768px) {
+  .listen-band__inner { flex-direction: column; text-align: center; gap: 1.25rem; }
+  .listen-band__text p { margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .chapter-list { grid-template-columns: 1fr; }
+  .chapter-btn__time { flex-basis: 3.6rem; }
+}
