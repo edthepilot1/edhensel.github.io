@@ -24,4 +24,40 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://edhensel.com/es/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/pt/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/de/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/ru/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/zh/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/ja/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/ko/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/hi/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://edhensel.com/ta/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
 </urlset>

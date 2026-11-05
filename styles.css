@@ -612,3 +612,26 @@ h1, h2, h3, h4 {
   .chapter-list { grid-template-columns: 1fr; }
   .chapter-btn__time { flex-basis: 3.6rem; }
 }
+
+/* ========== Translated editions (/<lang>/ pages) ========== */
+.toc-list { max-width: 720px; margin: 0 auto 2.5rem; padding: 0; list-style: none; }
+.book-description ul { margin: 0 0 1.2rem 1.4rem; }
+.book-description ul li { margin-bottom: .3rem; }
+.toc-list li { padding: .45rem 0; border-bottom: 1px solid var(--color-cream-dark); }
+.toc-list li:last-child { border-bottom: none; }
+.toc-list__kind { font-weight: 700; color: var(--color-amber-dark); margin-right: .35rem; }
+.bible-notice { max-width: 720px; margin: 2rem auto 0; font-size: .88rem; color: var(--color-brown-light); text-align: center; }
+.listen-note--soon { font-size: 1.05rem; }
+.listen-note--soon .btn { margin-top: 1.2rem; }
+.lang-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 1rem; max-width: 820px; margin: 0 auto; padding: 0; }
+.lang-list a { display: inline-block; padding: .45rem 1rem; border: 1px solid var(--color-amber); border-radius: var(--radius); color: var(--color-brown); text-decoration: none; background: var(--color-white); }
+.lang-list a:hover, .lang-list a:focus { background: var(--color-amber); color: var(--color-white); }
+.lang-strip { text-align: center; font-size: .92rem; margin-top: 1rem; }
+.lang-strip a { margin: 0 .35rem; white-space: nowrap; }
+@media (max-width: 768px) {
+  .main-nav--lang ul { display: flex !important; position: static; flex-direction: row; gap: 1rem; background: none; box-shadow: none; padding: 0; }
+  .main-nav--lang a { padding: .25rem 0; }
+}
+:lang(zh) em, :lang(ja) em, :lang(ko) em, :lang(hi) em, :lang(ta) em,
+:lang(zh) .page-banner__sub, :lang(ja) .page-banner__sub, :lang(ko) .page-banner__sub, :lang(hi) .page-banner__sub, :lang(ta) .page-banner__sub,
+:lang(zh) .byline, :lang(ja) .byline, :lang(ko) .byline, :lang(hi) .byline, :lang(ta) .byline { font-style: normal; }
