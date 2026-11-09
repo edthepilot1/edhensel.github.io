@@ -15,6 +15,7 @@
   <link rel="alternate" hreflang="ko" href="https://edhensel.com/ko/">
   <link rel="alternate" hreflang="hi" href="https://edhensel.com/hi/">
   <link rel="alternate" hreflang="ta" href="https://edhensel.com/ta/">
+  <link rel="alternate" hreflang="fr" href="https://edhensel.com/fr/">
   <link rel="alternate" hreflang="en" href="https://edhensel.com/book.html">
   <link rel="alternate" hreflang="x-default" href="https://edhensel.com/book.html">
   <meta property="og:title" content="是地圖，不是謎團: 聖經對末世究竟怎麼說">
@@ -27,6 +28,18 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css?v=20261105">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "是地圖，不是謎團: 聖經對末世究竟怎麼說", "author": {"@type": "Person", "name": "Ed Hensel"}, "inLanguage": "zh-Hant", "image": "https://edhensel.com/zh/cover.jpg", "url": "https://edhensel.com/zh/"}</script>
+  <style>
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-status { margin-top: 1rem; padding: 1rem 1.2rem; border-radius: 6px; font-size: 1.02rem; }
+    .form-status--ok { background: #eef6ee; border: 1px solid #9cc79c; color: #1f4d1f; }
+    .form-status--err { background: #fbeeee; border: 1px solid #d9a3a3; color: #6b1f1f; }
+    @media (max-width: 480px) {   /* three header links (contact, languages, English) must fit on a phone */
+      .nav-wrapper { gap: .75rem; }
+      .site-logo { white-space: normal; font-size: 1rem; line-height: 1.25; }
+      .main-nav--lang ul { gap: .75rem; }
+      .main-nav--lang a { font-size: .85rem; letter-spacing: 0; white-space: nowrap; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">是地圖，不是謎團</a>
@@ -34,7 +47,7 @@
     <div class="nav-wrapper">
       <a href="./" class="site-logo">是地圖，不是謎團</a>
       <nav class="main-nav main-nav--lang" aria-label="本書的其他語言版本">
-        <ul><li><a href="#languages">中文（繁體） &#9662;</a></li><li><a href="../book.html" lang="en" hreflang="en">English</a></li></ul>
+        <ul><li><a href="#contact">聯絡</a></li><li><a href="#languages">中文（繁體） &#9662;</a></li><li><a href="../book.html" lang="en" hreflang="en">English</a></li></ul>
       </nav>
     </div>
   </header>
@@ -80,10 +93,45 @@
         <p class="bible-notice">本書經文引自《和合本》聖經（1919年，公有領域）。</p>
       </div>
     </section>
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">寫信給 Ed</h2>
+        <p class="section-subtitle">無論是關於本書的問題、演講邀請，或是一句鼓勵的話，Ed 都很樂意收到您的來信。</p>
+        <div class="contact-grid">
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mbdpqqwb" method="POST">
+              <input type="hidden" name="_subject" value="edhensel.com/zh/ contact form (Chinese)">
+              <input type="hidden" name="page" value="edhensel.com/zh/ (Chinese)">
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+              <label for="name">姓名 <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="您的全名">
+              <label for="email">電子郵件 <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="name@example.com">
+              <label for="subject">主題 <span aria-hidden="true">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>請選擇主題…</option><option value="Book Question">關於本書的問題</option><option value="Speaking Inquiry">演講邀請</option><option value="Media Request">媒體採訪</option><option value="General Message">一般留言</option>
+              </select>
+              <label for="message">訊息 <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" required placeholder="請在這裡輸入您的訊息…"></textarea>
+              <button type="submit" class="btn" data-sending="傳送中…">送出訊息</button>
+            </form>
+            <p class="form-status" id="form-status" role="status" tabindex="-1" hidden
+               data-ok="謝謝您！您的訊息已送出。" data-err="抱歉，訊息無法送出。請稍後再試。"></p>
+          </div>
+          <div class="contact-info-wrapper">
+            <div class="contact-info-box">
+              <h3>貼心提醒</h3>
+              <p>您可以用中文或英文來信。</p>
+              <p>如需邀請演講或媒體採訪，請選擇相應的主題，並附上一些詳細資訊。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="section section--alt" id="languages">
       <div class="container">
         <h2 class="section-title">本書的其他語言版本</h2>
-        <ul class="lang-list"><li><a href="../es/" hreflang="es" lang="es">Español</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></li><li><a href="../ta/" hreflang="ta" lang="ta">தமிழ்</a></li><li><a href="../book.html" hreflang="en" lang="en">English</a></li></ul>
+        <ul class="lang-list"><li><a href="../es/" hreflang="es" lang="es">Español</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></li><li><a href="../ta/" hreflang="ta" lang="ta">தமிழ்</a></li><li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="../book.html" hreflang="en" lang="en">English</a></li></ul>
       </div>
     </section>
   </main>
@@ -96,5 +144,26 @@
       <p class="footer-copy">&copy; 2026 Ed Hensel.</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var f = document.getElementById('contact-form'), st = document.getElementById('form-status');
+      if (!f || !st || !window.fetch || !window.FormData) return;
+      f.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var b = f.querySelector('button[type=submit]'), label = b.textContent;
+        b.disabled = true; b.textContent = b.getAttribute('data-sending'); st.hidden = true;
+        fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+          .then(function (r) {
+            if (!r.ok) throw new Error(r.status);
+            f.reset(); f.hidden = true;
+            st.textContent = st.getAttribute('data-ok'); st.className = 'form-status form-status--ok';
+          })
+          .catch(function () {
+            st.textContent = st.getAttribute('data-err'); st.className = 'form-status form-status--err';
+          })
+          .then(function () { b.disabled = false; b.textContent = label; st.hidden = false; st.focus(); });
+      });
+    })();
+  </script>
 </body>
 </html>
