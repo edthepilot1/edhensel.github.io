@@ -15,6 +15,7 @@
   <link rel="alternate" hreflang="ko" href="https://edhensel.com/ko/">
   <link rel="alternate" hreflang="hi" href="https://edhensel.com/hi/">
   <link rel="alternate" hreflang="ta" href="https://edhensel.com/ta/">
+  <link rel="alternate" hreflang="fr" href="https://edhensel.com/fr/">
   <link rel="alternate" hreflang="en" href="https://edhensel.com/book.html">
   <link rel="alternate" hreflang="x-default" href="https://edhensel.com/book.html">
   <meta property="og:title" content="மர்மம் அல்ல, ஒரு வரைபடம்: கடைசி காலத்தைக் குறித்து வேதாகமம் உண்மையில் சொல்லும் செய்தி">
@@ -27,6 +28,18 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css?v=20261105">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "மர்மம் அல்ல, ஒரு வரைபடம்: கடைசி காலத்தைக் குறித்து வேதாகமம் உண்மையில் சொல்லும் செய்தி", "author": {"@type": "Person", "name": "Ed Hensel"}, "inLanguage": "ta", "image": "https://edhensel.com/ta/cover.jpg", "url": "https://edhensel.com/ta/"}</script>
+  <style>
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-status { margin-top: 1rem; padding: 1rem 1.2rem; border-radius: 6px; font-size: 1.02rem; }
+    .form-status--ok { background: #eef6ee; border: 1px solid #9cc79c; color: #1f4d1f; }
+    .form-status--err { background: #fbeeee; border: 1px solid #d9a3a3; color: #6b1f1f; }
+    @media (max-width: 480px) {   /* three header links (contact, languages, English) must fit on a phone */
+      .nav-wrapper { gap: .75rem; }
+      .site-logo { white-space: normal; font-size: 1rem; line-height: 1.25; }
+      .main-nav--lang ul { gap: .75rem; }
+      .main-nav--lang a { font-size: .85rem; letter-spacing: 0; white-space: nowrap; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">மர்மம் அல்ல, ஒரு வரைபடம்</a>
@@ -34,7 +47,7 @@
     <div class="nav-wrapper">
       <a href="./" class="site-logo">மர்மம் அல்ல, ஒரு வரைபடம்</a>
       <nav class="main-nav main-nav--lang" aria-label="இந்த நூல் பிற மொழிகளில்">
-        <ul><li><a href="#languages">தமிழ் &#9662;</a></li><li><a href="../book.html" lang="en" hreflang="en">English</a></li></ul>
+        <ul><li><a href="#contact">தொடர்பு</a></li><li><a href="#languages">தமிழ் &#9662;</a></li><li><a href="../book.html" lang="en" hreflang="en">English</a></li></ul>
       </nav>
     </div>
   </header>
@@ -80,10 +93,45 @@
         <p class="bible-notice">வேதாகம மேற்கோள்கள் இந்தியன் ரிவைஸ்டு வெர்ஷன் (IRV) தமிழ் வேதாகமத்திலிருந்து எடுக்கப்பட்டவை, © 2017, 2019 Bridge Connectivity Solutions Pvt. Ltd., Creative Commons Attribution-ShareAlike 4.0 உரிமத்தின் கீழ். சிறு அச்சுப் பிழைகள் திருத்தப்பட்டுள்ளன.</p>
       </div>
     </section>
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 class="section-title" id="contact-title">எட்டுக்கு எழுதுங்கள்</h2>
+        <p class="section-subtitle">புத்தகத்தைப் பற்றிய கேள்வியோ, உரையாற்ற அழைப்போ, ஊக்கமளிக்கும் சில வார்த்தைகளோ — உங்களிடமிருந்து செய்தி பெற எட் மகிழ்ச்சியடைவார்.</p>
+        <div class="contact-grid">
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mbdpqqwb" method="POST">
+              <input type="hidden" name="_subject" value="edhensel.com/ta/ contact form (Tamil)">
+              <input type="hidden" name="page" value="edhensel.com/ta/ (Tamil)">
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+              <label for="name">பெயர் <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="உங்கள் முழுப் பெயர்">
+              <label for="email">மின்னஞ்சல் <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="name@example.com">
+              <label for="subject">தலைப்பு <span aria-hidden="true">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>ஒரு தலைப்பைத் தேர்ந்தெடுக்கவும்…</option><option value="Book Question">புத்தகம் பற்றிய கேள்வி</option><option value="Speaking Inquiry">உரையாற்ற அழைப்பு</option><option value="Media Request">ஊடகக் கோரிக்கை</option><option value="General Message">பொதுவான செய்தி</option>
+              </select>
+              <label for="message">செய்தி <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" required placeholder="உங்கள் செய்தியை இங்கே எழுதுங்கள்…"></textarea>
+              <button type="submit" class="btn" data-sending="அனுப்பப்படுகிறது…">செய்தியை அனுப்பவும்</button>
+            </form>
+            <p class="form-status" id="form-status" role="status" tabindex="-1" hidden
+               data-ok="நன்றி! உங்கள் செய்தி அனுப்பப்பட்டது." data-err="மன்னிக்கவும், செய்தியை அனுப்ப முடியவில்லை. சிறிது நேரம் கழித்து மீண்டும் முயற்சிக்கவும்."></p>
+          </div>
+          <div class="contact-info-wrapper">
+            <div class="contact-info-box">
+              <h3>தெரிந்துகொள்ள</h3>
+              <p>நீங்கள் தமிழிலோ ஆங்கிலத்திலோ எழுதலாம்.</p>
+              <p>உரையாற்ற அழைப்பு அல்லது ஊடகக் கோரிக்கைக்கு, பொருத்தமான தலைப்பைத் தேர்ந்தெடுத்து சில விவரங்களைச் சேர்க்கவும்.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="section section--alt" id="languages">
       <div class="container">
         <h2 class="section-title">இந்த நூல் பிற மொழிகளில்</h2>
-        <ul class="lang-list"><li><a href="../es/" hreflang="es" lang="es">Español</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="../zh/" hreflang="zh-Hant" lang="zh-Hant">中文（繁體）</a></li><li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></li><li><a href="../book.html" hreflang="en" lang="en">English</a></li></ul>
+        <ul class="lang-list"><li><a href="../es/" hreflang="es" lang="es">Español</a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt-BR">Português</a></li><li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="../zh/" hreflang="zh-Hant" lang="zh-Hant">中文（繁體）</a></li><li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></li><li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="../book.html" hreflang="en" lang="en">English</a></li></ul>
       </div>
     </section>
   </main>
@@ -96,5 +144,26 @@
       <p class="footer-copy">&copy; 2026 Ed Hensel.</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var f = document.getElementById('contact-form'), st = document.getElementById('form-status');
+      if (!f || !st || !window.fetch || !window.FormData) return;
+      f.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var b = f.querySelector('button[type=submit]'), label = b.textContent;
+        b.disabled = true; b.textContent = b.getAttribute('data-sending'); st.hidden = true;
+        fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+          .then(function (r) {
+            if (!r.ok) throw new Error(r.status);
+            f.reset(); f.hidden = true;
+            st.textContent = st.getAttribute('data-ok'); st.className = 'form-status form-status--ok';
+          })
+          .catch(function () {
+            st.textContent = st.getAttribute('data-err'); st.className = 'form-status form-status--err';
+          })
+          .then(function () { b.disabled = false; b.textContent = label; st.hidden = false; st.focus(); });
+      });
+    })();
+  </script>
 </body>
 </html>
